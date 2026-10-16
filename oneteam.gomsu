@@ -1,0 +1,1441 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CERAMIQUE STUDIO - Gốm sứ thủ công mang vẻ đẹp cổ điển hòa quyện cùng phong cách sống hiện đại.">
+<title>CERAMIQUE STUDIO | Nghệ thuật gốm sứ</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #193B46;
+  --navy-light: #294E58;
+  --beige: #F4EFE5;
+  --cream: #FFFCF6;
+  --sand: #D9C7AB;
+  --brown: #80654D;
+  --text: #283A3D;
+  --muted: #77766F;
+  --white: #FFFFFF;
+  --border: rgba(25, 59, 70, 0.15);
+  --shadow: 0 15px 45px rgba(25, 59, 70, 0.09);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: min(1180px, 90%);
+  margin: auto;
+}
+
+.eyebrow {
+  color: var(--brown);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+h1, h2, h3, .brand-name {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.2;
+}
+
+.section-heading {
+  max-width: 600px;
+  margin-bottom: 38px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  margin-top: 14px;
+  max-width: 540px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 23px;
+  border: 1px solid var(--navy);
+  background: var(--navy);
+  color: white;
+  transition: 0.3s ease;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: var(--navy-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  color: var(--navy);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  color: white;
+}
+
+.topbar {
+  background: var(--navy);
+  color: var(--beige);
+  text-align: center;
+  padding: 8px 15px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 252, 246, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: var(--navy);
+}
+
+.brand-subtitle {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--brown);
+  margin-top: 5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 12px;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--brown);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: var(--navy);
+  font-size: 21px;
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -9px;
+  background: var(--brown);
+  color: white;
+  border-radius: 50%;
+  min-width: 17px;
+  height: 17px;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.hero {
+  background: var(--beige);
+  overflow: hidden;
+}
+
+.hero-grid {
+  min-height: 610px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.hero-content {
+  padding: 25px 0;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 5.3vw, 68px);
+  line-height: 1.08;
+  color: var(--navy);
+  margin: 20px 0;
+}
+
+.hero h1 em {
+  color: var(--brown);
+  font-weight: 400;
+}
+
+.hero-description {
+  color: var(--muted);
+  max-width: 440px;
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 38px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.hero-note span {
+  color: var(--brown);
+  font-size: 20px;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 500px;
+}
+
+.hero-image {
+  height: 500px;
+  border-radius: 180px 180px 4px 4px;
+  object-position: center;
+}
+
+.hero-caption {
+  position: absolute;
+  right: -15px;
+  bottom: 35px;
+  background: var(--cream);
+  padding: 18px 23px;
+  box-shadow: var(--shadow);
+  max-width: 205px;
+}
+
+.hero-caption strong {
+  display: block;
+  font-family: "Playfair Display", serif;
+  color: var(--navy);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.hero-caption span {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.benefits {
+  padding: 27px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+
+.benefit-icon {
+  font-size: 24px;
+  color: var(--brown);
+}
+
+.benefit strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.benefit span {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.section-top {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.section-top .section-heading {
+  margin-bottom: 0;
+}
+
+.text-link {
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--navy);
+  padding-bottom: 5px;
+  white-space: nowrap;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--beige);
+}
+
+.category-card img {
+  height: 310px;
+  transition: transform 0.6s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.05);
+}
+
+.category-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 45px 20px 20px;
+  color: white;
+  background: linear-gradient(transparent, rgba(15, 34, 37, 0.82));
+}
+
+.category-overlay h3 {
+  font-size: 23px;
+}
+
+.category-overlay p {
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+.products-section {
+  background: var(--beige);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.product-card {
+  min-width: 0;
+}
+
+.product-image-wrap {
+  position: relative;
+  background: #E9E0D2;
+  overflow: hidden;
+}
+
+.product-image-wrap img {
+  height: 285px;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image-wrap img {
+  transform: scale(1.04);
+}
+
+.product-tag {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  background: var(--cream);
+  color: var(--navy);
+  padding: 5px 9px;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.add-cart {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 39px;
+  height: 39px;
+  border: none;
+  background: var(--cream);
+  color: var(--navy);
+  font-size: 21px;
+  transition: 0.25s;
+}
+
+.add-cart:hover {
+  background: var(--navy);
+  color: white;
+}
+
+.product-info {
+  padding: 15px 2px;
+}
+
+.product-category {
+  color: var(--brown);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.product-info h3 {
+  color: var(--navy);
+  font-size: 19px;
+  margin: 4px 0;
+}
+
+.product-info p {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.product-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 75px;
+}
+
+.story-images {
+  position: relative;
+  padding: 0 40px 40px 0;
+}
+
+.story-main-image {
+  height: 460px;
+}
+
+.story-small-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 45%;
+  height: 220px;
+  border: 8px solid var(--cream);
+}
+
+.story-content h2 {
+  margin: 16px 0 20px;
+}
+
+.story-content p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.story-signature {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.signature-mark {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--sand);
+  border-radius: 50%;
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  color: var(--brown);
+}
+
+.story-signature strong {
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
+.story-signature span {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.collection-banner {
+  background: var(--navy);
+  color: var(--beige);
+  overflow: hidden;
+}
+
+.banner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 45px;
+}
+
+.banner-content {
+  padding: 65px 0;
+}
+
+.banner-content .eyebrow {
+  color: var(--sand);
+}
+
+.banner-content h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  margin: 16px 0;
+}
+
+.banner-content p {
+  color: rgba(244, 239, 229, 0.75);
+  font-size: 13px;
+  max-width: 440px;
+  margin-bottom: 24px;
+}
+
+.banner-content .btn {
+  background: var(--beige);
+  color: var(--navy);
+  border-color: var(--beige);
+}
+
+.banner-content .btn:hover {
+  background: white;
+}
+
+.banner-image {
+  height: 390px;
+}
+
+.values {
+  background: #EEE5D7;
+  padding: 65px 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.value-card {
+  text-align: center;
+  padding: 15px;
+}
+
+.value-icon {
+  font-size: 29px;
+  color: var(--brown);
+  margin-bottom: 12px;
+}
+
+.value-card h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.value-card p {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 290px;
+  margin: auto;
+}
+
+.newsletter {
+  padding: 75px 0;
+  text-align: center;
+}
+
+.newsletter h2 {
+  margin: 12px 0;
+}
+
+.newsletter p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 460px;
+  margin: auto;
+  border-bottom: 1px solid var(--navy);
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 13px 5px;
+  color: var(--navy);
+}
+
+.newsletter-form button {
+  border: none;
+  background: transparent;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0 10px;
+}
+
+footer {
+  background: var(--navy);
+  color: var(--beige);
+  padding: 60px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  padding-bottom: 45px;
+}
+
+.footer-brand .brand-name {
+  color: var(--beige);
+}
+
+.footer-brand .brand-subtitle {
+  color: var(--sand);
+}
+
+.footer-description {
+  color: rgba(244, 239, 229, 0.7);
+  font-size: 12px;
+  max-width: 260px;
+  margin-top: 18px;
+}
+
+.footer-column h3 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column li {
+  margin-bottom: 10px;
+  font-size: 11px;
+  color: rgba(244, 239, 229, 0.72);
+}
+
+.footer-column a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(244, 239, 229, 0.2);
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 10px;
+  color: rgba(244, 239, 229, 0.65);
+}
+
+.toast {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translate(-50%, 120px);
+  z-index: 300;
+  padding: 13px 22px;
+  background: var(--navy);
+  color: white;
+  font-size: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.toast.show {
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: 1000px) {
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero-grid {
+    gap: 30px;
+  }
+
+  .hero-visual, .hero-image {
+    min-height: 430px;
+    height: 430px;
+  }
+
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-card img {
+    height: 330px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 18px;
+  }
+
+  .product-image-wrap img {
+    height: 330px;
+  }
+
+  .story-grid {
+    gap: 40px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .container {
+    width: 90%;
+  }
+
+  .navbar {
+    min-height: 68px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 22px 5%;
+    background: var(--cream);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 40px;
+    padding-bottom: 45px;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .hero-visual, .hero-image {
+    min-height: 370px;
+    height: 370px;
+  }
+
+  .hero-visual {
+    margin: 0 8px;
+  }
+
+  .hero-caption {
+    right: -5px;
+    bottom: 20px;
+  }
+
+  .benefit-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 12px;
+  }
+
+  .benefit {
+    justify-content: flex-start;
+  }
+
+  .section {
+    padding: 65px 0;
+  }
+
+  .section-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .categories {
+    gap: 12px;
+  }
+
+  .category-card img {
+    height: 235px;
+  }
+
+  .category-overlay {
+    padding: 35px 12px 12px;
+  }
+
+  .category-overlay h3 {
+    font-size: 19px;
+  }
+
+  .product-image-wrap img {
+    height: 240px;
+  }
+
+  .product-info h3 {
+    font-size: 17px;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .story-main-image {
+    height: 360px;
+  }
+
+  .story-small-image {
+    height: 170px;
+  }
+
+  .banner-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .banner-content {
+    padding: 55px 0 30px;
+  }
+
+  .banner-image {
+    height: 290px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .footer-grid {
+    gap: 32px 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero h1 {
+    font-size: 39px;
+  }
+
+  .hero-buttons .btn {
+    padding: 12px 15px;
+    font-size: 11px;
+  }
+
+  .categories {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .category-card img {
+    height: 195px;
+  }
+
+  .product-grid {
+    gap: 22px 12px;
+  }
+
+  .product-image-wrap img {
+    height: 190px;
+  }
+
+  .product-info h3 {
+    font-size: 15px;
+  }
+
+  .product-info p {
+    font-size: 10px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  VẺ ĐẸP CỦA GỐM SỨ — TINH TẾ TRONG TỪNG KHOẢNH KHẮC
+</div>
+
+<header>
+  <nav class="navbar container">
+    <a href="#home" class="brand" aria-label="CERAMIQUE STUDIO trang chủ">
+      <span class="brand-name">CERAMIQUE</span>
+      <span class="brand-subtitle">STUDIO · EST. 2024</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Trang chủ</a></li>
+      <li><a href="#categories">Danh mục</a></li>
+      <li><a href="#products">Sản phẩm</a></li>
+      <li><a href="#story">Câu chuyện</a></li>
+      <li><a href="#contact">Liên hệ</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="cartButton" aria-label="Xem giỏ hàng">
+        ♧ <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="icon-btn menu-toggle" id="menuToggle"
+        aria-label="Mở menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="eyebrow">Nghệ thuật từ đất và lửa</span>
+        <h1>Mang vẻ đẹp<br>vượt thời gian<br>vào <em>tổ ấm.</em></h1>
+        <p class="hero-description">
+          Những món đồ gốm được tạo nên bằng sự tỉ mỉ, kết hợp nét đẹp
+          truyền thống với tinh thần sống hiện đại. Đơn giản, gần gũi
+          và dành cho mọi thế hệ.
+        </p>
+        <div class="hero-buttons">
+          <a href="#products" class="btn">Khám phá bộ sưu tập ↗</a>
+          <a href="#story" class="btn btn-outline">Câu chuyện của chúng tôi</a>
+        </div>
+        <div class="hero-note">
+          <span>✳</span>
+          <p>Chất liệu tự nhiên · Thiết kế tinh tế · Giá trị bền lâu</p>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img class="hero-image"
+          src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=1000&q=85"
+          alt="Bộ gốm sứ thủ công với tông màu đất ấm áp">
+        <div class="hero-caption">
+          <strong>Made with care.</strong>
+          <span>Mỗi món gốm, một câu chuyện riêng.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="container benefit-grid">
+      <div class="benefit">
+        <div class="benefit-icon">✳</div>
+        <div>
+          <strong>Thiết kế tinh giản</strong>
+          <span>Đẹp trong mọi không gian</span>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">♧</div>
+        <div>
+          <strong>Cảm hứng tự nhiên</strong>
+          <span>Màu sắc nhẹ nhàng, hài hòa</span>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">◇</div>
+        <div>
+          <strong>Phù hợp nhiều thế hệ</strong>
+          <span>Gần gũi và dễ sử dụng</span>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">♡</div>
+        <div>
+          <strong>Trao gửi yêu thương</strong>
+          <span>Món quà ý nghĩa mỗi ngày</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-top">
+        <div class="section-heading">
+          <span class="eyebrow">Khám phá theo nhu cầu</span>
+          <h2>Gốm sứ cho mọi<br>khoảnh khắc sống.</h2>
+          <p>Từ bữa cơm gia đình đến góc trang trí yêu thích,
+            mỗi sản phẩm đều góp phần tạo nên cảm giác ấm áp.</p>
+        </div>
+        <a href="#products" class="text-link">Xem tất cả sản phẩm ↗</a>
+      </div>
+
+      <div class="categories">
+        <a href="#products" class="category-card">
+          <img src="https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?auto=format&fit=crop&w=700&q=80"
+            alt="Bộ chén đĩa gốm sứ">
+          <div class="category-overlay">
+            <h3>Bàn ăn</h3>
+            <p>Cho những bữa cơm ấm cúng</p>
+          </div>
+        </a>
+        <a href="#products" class="category-card">
+          <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=700&q=80"
+            alt="Tách gốm dùng cho trà và cà phê">
+          <div class="category-overlay">
+            <h3>Trà & Cà phê</h3>
+            <p>Thưởng thức từng phút giây</p>
+          </div>
+        </a>
+        <a href="#products" class="category-card">
+          <img src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=700&q=80"
+            alt="Bình gốm trang trí không gian">
+          <div class="category-overlay">
+            <h3>Trang trí</h3>
+            <p>Điểm nhấn cho tổ ấm</p>
+          </div>
+        </a>
+        <a href="#products" class="category-card">
+          <img src="https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=700&q=80"
+            alt="Món quà gốm sứ tinh tế">
+          <div class="category-overlay">
+            <h3>Quà tặng</h3>
+            <p>Gửi trao những điều tốt đẹp</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section products-section" id="products">
+    <div class="container">
+      <div class="section-top">
+        <div class="section-heading">
+          <span class="eyebrow">Được yêu thích</span>
+          <h2>Những món gốm<br>được chọn nhiều nhất.</h2>
+          <p>Thiết kế hài hòa, dễ kết hợp và phù hợp với nhịp sống
+            hiện đại của mọi gia đình.</p>
+        </div>
+        <a href="#contact" class="text-link">Tư vấn chọn sản phẩm ↗</a>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <span class="product-tag">Bán chạy</span>
+            <img src="https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?auto=format&fit=crop&w=700&q=80"
+              alt="Bộ đĩa gốm màu kem">
+            <button class="add-cart" data-name="Bộ đĩa gốm tối giản"
+              aria-label="Thêm Bộ đĩa gốm tối giản vào giỏ">+</button>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Bộ sưu tập bàn ăn</span>
+            <h3>Bộ đĩa gốm tối giản</h3>
+            <p>Phong cách thanh lịch, dễ phối bàn ăn.</p>
+            <span class="product-price">450.000₫</span>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <span class="product-tag">Mới</span>
+            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=700&q=80"
+              alt="Tách cà phê gốm thủ công">
+            <button class="add-cart" data-name="Tách cà phê thủ công"
+              aria-label="Thêm Tách cà phê thủ công vào giỏ">+</button>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Trà & cà phê</span>
+            <h3>Tách cà phê thủ công</h3>
+            <p>Nhỏ gọn, thân thiện và tiện dụng.</p>
+            <span class="product-price">180.000₫</span>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <span class="product-tag">Được yêu thích</span>
+            <img src="https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=700&q=80"
+              alt="Bình gốm trang trí tông màu đất">
+            <button class="add-cart" data-name="Bình gốm màu đất"
+              aria-label="Thêm Bình gốm màu đất vào giỏ">+</button>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Trang trí</span>
+            <h3>Bình gốm màu đất</h3>
+            <p>Vẻ đẹp mộc mạc cho góc nhà nhỏ.</p>
+            <span class="product-price">320.000₫</span>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <span class="product-tag">Quà tặng</span>
+            <img src="https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=700&q=80"
+              alt="Sản phẩm gốm làm quà tặng">
+            <button class="add-cart" data-name="Bộ quà tặng gốm sứ"
+              aria-label="Thêm Bộ quà tặng gốm sứ vào giỏ">+</button>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Quà tặng</span>
+            <h3>Bộ quà tặng gốm sứ</h3>
+            <p>Món quà tinh tế cho người thân.</p>
+            <span class="product-price">590.000₫</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="story">
+    <div class="container story-grid">
+      <div class="story-images">
+        <img class="story-main-image"
+          src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=900&q=85"
+          alt="Không gian làm gốm thủ công">
+        <img class="story-small-image"
+          src="https://images.unsplash.com/photo-1565193298595-6c4a5a7f2b15?auto=format&fit=crop&w=500&q=80"
+          alt="Chi tiết sản phẩm gốm">
+      </div>
+
+      <div class="story-content">
+        <span class="eyebrow">Câu chuyện thương hiệu</span>
+        <h2>Giữ gìn nét xưa,<br>chạm đến hôm nay.</h2>
+        <p>
+          CERAMIQUE STUDIO được xây dựng từ tình yêu dành cho những
+          món đồ gốm giản dị, nơi chất liệu tự nhiên và vẻ đẹp thủ công
+          hòa quyện trong từng sản phẩm.
+        </p>
+        <p>
+          Chúng tôi tin rằng gốm sứ không chỉ là vật dụng hằng ngày.
+          Đó còn là một phần của ký ức, của những bữa cơm gia đình,
+          những tách trà buổi sáng và những khoảnh khắc bình yên.
+        </p>
+        <p>
+          Với bảng màu trung tính, đường nét tinh giản và cảm hứng
+          cổ điển được thể hiện theo cách hiện đại, mỗi món gốm đều
+          có thể đồng hành cùng nhiều thế hệ.
+        </p>
+        <div class="story-signature">
+          <div class="signature-mark">C.</div>
+          <div>
+            <strong>CERAMIQUE STUDIO</strong>
+            <span>Đẹp từ những điều giản dị.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="collection-banner">
+    <div class="container banner-grid">
+      <div class="banner-content">
+        <span class="eyebrow">Bộ sưu tập đặc biệt</span>
+        <h2>Một chút bình yên<br>trong nhịp sống bận rộn.</h2>
+        <p>
+          Khám phá những thiết kế mang cảm hứng từ thiên nhiên,
+          dành cho người yêu sự nhẹ nhàng và muốn chăm chút
+          cho từng góc nhỏ trong ngôi nhà.
+        </p>
+        <a href="#products" class="btn">Khám phá ngay ↗</a>
+      </div>
+      <img class="banner-image"
+        src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=900&q=85"
+        alt="Bộ sưu tập gốm sứ trong không gian tự nhiên">
+    </div>
+  </section>
+
+  <section class="values">
+    <div class="container values-grid">
+      <div class="value-card">
+        <div class="value-icon">❋</div>
+        <h3>Vẻ đẹp bền lâu</h3>
+        <p>Thiết kế không chạy theo xu hướng nhất thời,
+          dễ kết hợp với nhiều phong cách sống.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">◇</div>
+        <h3>Dành cho mọi nhà</h3>
+        <p>Sản phẩm hướng đến nhiều độ tuổi, từ những
+          gia đình trẻ đến người yêu nét đẹp truyền thống.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">♡</div>
+        <h3>Trân trọng từng điều nhỏ</h3>
+        <p>Mang đến cảm giác ấm áp, gần gũi và ý nghĩa
+          trong những khoảnh khắc thường ngày.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter" id="contact">
+    <div class="container">
+      <span class="eyebrow">Kết nối cùng chúng tôi</span>
+      <h2>Nhận cảm hứng mỗi ngày.</h2>
+      <p>Đăng ký nhận tin về bộ sưu tập mới, ý tưởng trang trí
+        và những câu chuyện từ thế giới gốm sứ.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" id="emailInput"
+          placeholder="Địa chỉ email của bạn"
+          aria-label="Địa chỉ email" required>
+        <button type="submit">ĐĂNG KÝ ↗</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="brand">
+          <span class="brand-name">CERAMIQUE</span>
+          <span class="brand-subtitle">STUDIO · EST. 2024</span>
+        </a>
+        <p class="footer-description">
+          Gốm sứ tinh tế, kết nối vẻ đẹp truyền thống
+          với nhịp sống hiện đại.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>KHÁM PHÁ</h3>
+        <ul>
+          <li><a href="#categories">Danh mục sản phẩm</a></li>
+          <li><a href="#products">Bộ sưu tập</a></li>
+          <li><a href="#story">Câu chuyện thương hiệu</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>HỖ TRỢ</h3>
+        <ul>
+          <li><a href="#contact">Hướng dẫn mua hàng</a></li>
+          <li><a href="#contact">Chính sách giao hàng</a></li>
+          <li><a href="#contact">Chăm sóc khách hàng</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>LIÊN HỆ</h3>
+        <ul>
+          <li>Email: hello@ceramiquestudio.vn</li>
+          <li>Điện thoại: 0123 456 789</li>
+          <li>Thứ 2 – Thứ 7: 9:00 – 18:00</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 CERAMIQUE STUDIO. All rights reserved.</span>
+      <span>Được tạo nên từ tình yêu dành cho gốm sứ.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+const cartCount = document.getElementById("cartCount");
+const cartButton = document.getElementById("cartButton");
+const toast = document.getElementById("toast");
+
+let cart = [];
+let toastTimer;
+
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2600);
+}
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("active");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.textContent = isOpen ? "✕" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  });
+});
+
+document.querySelectorAll(".add-cart").forEach(button => {
+  button.addEventListener("click", () => {
+    const name = button.dataset.name;
+    cart.push(name);
+    cartCount.textContent = cart.length;
+    showToast("Đã thêm “" + name + "” vào giỏ hàng.");
+  });
+});
+
+cartButton.addEventListener("click", () => {
+  if (cart.length === 0) {
+    showToast("Giỏ hàng của bạn hiện đang trống.");
+    return;
+  }
+
+  const summary = cart.reduce((result, item) => {
+    result[item] = (result[item] || 0) + 1;
+    return result;
+  }, {});
+
+  const details = Object.entries(summary)
+    .map(([name, quantity]) => name + " × " + quantity)
+    .join("; ");
+
+  showToast("Giỏ hàng (" + cart.length + " sản phẩm): " + details);
+});
+
+document.getElementById("newsletterForm")
+  .addEventListener("submit", event => {
+    event.preventDefault();
+
+    const email = document.getElementById("emailInput").value.trim();
+
+    if (!email) {
+      showToast("Vui lòng nhập địa chỉ email.");
+      return;
+    }
+
+    showToast("Cảm ơn bạn đã đăng ký nhận tin!");
+    event.target.reset();
+  });
+</script>
+
+</body>
+</html>
